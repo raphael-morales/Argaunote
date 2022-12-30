@@ -5,21 +5,25 @@
 {% block body %}
     <h1>Membre index</h1>
 
+{#    <div class="container">#}
+{#        {{ include('membre/_form.html.twig') }}#}
+{#    </div>#}
+
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+{#                <th>Id</th>#}
                 <th>Name</th>
-                <th>actions</th>
+{#                <th>actions</th>#}
             </tr>
         </thead>
         <tbody>
         {% for membre in membres %}
             <tr>
-                <td>{{ membre.id }}</td>
+{#                <td>{{ membre.id }}</td>#}
                 <td>{{ membre.name }}</td>
                 <td>
-                    <a href="{{ path('app_membre_show', {'id': membre.id}) }}">show</a>
+{#                    <a href="{{ path('app_membre_show', {'id': membre.id}) }}">show</a>#}
                     <a href="{{ path('app_membre_edit', {'id': membre.id}) }}">edit</a>
                 </td>
             </tr>

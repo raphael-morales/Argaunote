@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/membre")
+ * @Route("/")
  */
 class MembreController extends AbstractController
 {
     /**
-     * @Route("/", name="app_membre_index", methods={"GET"})
+     * @Route("/index", name="app_membre_index", methods={"GET"})
      */
     public function index(MembreRepository $membreRepository): Response
     {
@@ -26,7 +26,7 @@ class MembreController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_membre_new", methods={"GET", "POST"})
+     * @Route("/", name="app_membre_new", methods={"GET", "POST"})
      */
     public function new(Request $request, MembreRepository $membreRepository): Response
     {
@@ -37,12 +37,13 @@ class MembreController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $membreRepository->add($membre, true);
 
-            return $this->redirectToRoute('app_membre_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_membre_new', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('membre/new.html.twig', [
             'membre' => $membre,
             'form' => $form,
+            'membres' => $membreRepository->findAll(),
         ]);
     }
 
