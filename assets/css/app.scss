@@ -66,3 +66,18 @@ Form {
     line-height: 20px;
     padding: 0 10px 0 11px;
 }
+
+#boat {
+    position: relative;
+    padding-top: 5px;
+}
+
+footer {
+    display: flex;
+    bottom: 0;
+    background-color: #68E2EF;
+    padding: 20px;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+}

@@ -4,14 +4,9 @@
 
 {% block body %}
     <main>
-        <div class="titre">
-            <h1>Les Argaunotes</h1>
-        </div>
-        <h2>Ajouter un(e) Argonaute</h2>
         <div class="formulaire">
             {{ include('membre/_form.html.twig', {'button_label':'Envoyer'}) }}
         </div>
-
         {#    <a href="{{ path('app_membre_index') }}">back to list</a>#}
         <div class="membres">
             {% for membre in membres %}
@@ -22,7 +17,7 @@
                     </div>
                     {#                <td>#}
                     {#<a href="{{ path('app_membre_show', {'id': membre.id}) }}">show</a>#}
-                    {#                    <a href="{{ path('app_membre_edit', {'id': membre.id}) }}">edit</a>#}
+{#                                        <a href="{{ path('app_membre_edit', {'id': membre.id}) }}">edit</a>#}
                     {#                </td>#}
                 </tr>
             {% else %}
@@ -30,6 +25,9 @@
                     <td colspan="3">Aucun Argaunote à été ajouté</td>
                 </tr>
             {% endfor %}
+        </div>
+        <div>
+            <img id="boat" src="/img/bateau.png" alt="image d'un bateau à voile">
         </div>
     </main>
 {% endblock %}

@@ -10,3 +10,17 @@ import '../css/app.scss';
 
 // start the Stimulus application
 import '../bootstrap';
+
+function iteration () {
+    let start = Date.now();
+
+    let timer = setInterval(function() {
+        let timePassed = Date.now() - start;
+
+        boat.style.left = timePassed / 5 + 'px';
+
+        if (timePassed > 8000) clearInterval(timer);
+
+    }, 20);
+}
+window.requestAnimationFrame(iteration);
