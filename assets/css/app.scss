@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.titre {
+    display: flex;
+    justify-content: center;
+    background: #68E2EF;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+H2 {
+    text-align: center;
+}
+
+.formulaire {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.membres {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 15%;
+    text-align: center;
+}
+
+.membre {
+    border: solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.label {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+Form {
+    display: flex;
+    align-items: flex-end;
+    flex-basis: min-content;
+    text-align: center;
+}
+
+#membre_name {
+    margin: 5px 5px 0 0;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 0 10px 0 11px;
+}

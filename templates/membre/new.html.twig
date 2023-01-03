@@ -1,25 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Membre{% endblock %}
+{% block title %}Argaunotes{% endblock %}
 
 {% block body %}
-    <h1>Create new Membre</h1>
+    <main>
+        <div class="titre">
+            <h1>Les Argaunotes</h1>
+        </div>
+        <h2>Ajouter un(e) Argonaute</h2>
+        <div class="formulaire">
+            {{ include('membre/_form.html.twig', {'button_label':'Envoyer'}) }}
+        </div>
 
-    {{ include('membre/_form.html.twig') }}
-
-    <a href="{{ path('app_membre_index') }}">back to list</a>
-    {% for membre in membres %}
-        <tr>
-            {#                <td>{{ membre.id }}</td>#}
-            <td>{{ membre.name }}</td>
-            <td>
-                {#                    <a href="{{ path('app_membre_show', {'id': membre.id}) }}">show</a>#}
-                <a href="{{ path('app_membre_edit', {'id': membre.id}) }}">edit</a>
-            </td>
-        </tr>
-    {% else %}
-        <tr>
-            <td colspan="3">no records found</td>
-        </tr>
-    {% endfor %}
+        {#    <a href="{{ path('app_membre_index') }}">back to list</a>#}
+        <div class="membres">
+            {% for membre in membres %}
+                <tr>
+                    {#                <td>{{ membre.id }}</td>#}
+                    <div class="membre">
+                        <td>{{ membre.name }}</td>
+                    </div>
+                    {#                <td>#}
+                    {#<a href="{{ path('app_membre_show', {'id': membre.id}) }}">show</a>#}
+                    {#                    <a href="{{ path('app_membre_edit', {'id': membre.id}) }}">edit</a>#}
+                    {#                </td>#}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Aucun Argaunote à été ajouté</td>
+                </tr>
+            {% endfor %}
+        </div>
+    </main>
 {% endblock %}
