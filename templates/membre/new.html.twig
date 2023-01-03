@@ -7,22 +7,16 @@
         <div class="formulaire">
             {{ include('membre/_form.html.twig', {'button_label':'Envoyer'}) }}
         </div>
-        {#    <a href="{{ path('app_membre_index') }}">back to list</a>#}
         <div class="membres">
             {% for membre in membres %}
                 <tr>
-                    {#                <td>{{ membre.id }}</td>#}
                     <div class="membre">
                         <td>{{ membre.name }}</td>
                     </div>
-                    {#                <td>#}
-                    {#<a href="{{ path('app_membre_show', {'id': membre.id}) }}">show</a>#}
-{#                                        <a href="{{ path('app_membre_edit', {'id': membre.id}) }}">edit</a>#}
-                    {#                </td>#}
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="3">Aucun Argaunote à été ajouté</td>
+                    <td colspan="3">Aucun Argaunote n'à été ajouté</td>
                 </tr>
             {% endfor %}
         </div>
